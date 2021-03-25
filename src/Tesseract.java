@@ -2,13 +2,14 @@ import java.io.File;
 
 public class Tesseract {
 
-    public static void main(String[] args) throws Exception {
+    public static int tuvastus(int failinimi) throws Exception {
 
+        int vesi;
         net.sourceforge.tess4j.Tesseract tesseract=new net.sourceforge.tess4j.Tesseract();
-
         tesseract.setDatapath("tessdata-master");
         tesseract.setTessVariable("user_defined_dpi","96");
-        System.out.println(tesseract.doOCR(new File("vesi2.jpg")));
+        vesi=Integer.parseInt(tesseract.doOCR(new File("vesi2.jpg")));
+        return vesi;
     }
 
 
