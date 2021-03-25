@@ -9,18 +9,20 @@ public class Peaklass {
         NäidudMassiivi dec20 = new NäidudMassiivi(12.286, 16.454, 2020, 12);
         NäidudMassiivi jan21 = new NäidudMassiivi(15.483, 19.873, 2021, 1);
         NäidudMassiivi feb21 = new NäidudMassiivi(17.375, 22.297, 2021, 2);
-        NäidudMassiivi mar21 = new NäidudMassiivi(20.046,24.848);*/
+        NäidudMassiivi mar21 = new NäidudMassiivi(20.046,24.848);
 
-
-        /*System.out.println(aug20);
+        System.out.println(aug20);
         System.out.println(dec20);
         System.out.println(mar21);*/
+
 
         MassiiviStatistika TartuVeevärk = new MassiiviStatistika(4.650,2.0352);
 
         System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluKülm(2020)));
         System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(2020)));
         System.out.println(TartuVeevärk.KuuArve(2020,3));
+
+        System.out.println(Tesseract.tuvastus("vesi2.jpg"));
     }
 
 }
