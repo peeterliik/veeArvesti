@@ -1,3 +1,5 @@
+import net.sourceforge.tess4j.Tesseract;
+
 import java.util.Arrays;
 
 public class Peaklass {
@@ -22,7 +24,7 @@ public class Peaklass {
         System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(2020)));
         System.out.println(TartuVeevärk.KuuArve(2020,3));
 
-        System.out.println(Tesseract.tuvastus("vesi2.jpg"));
+        System.out.println(Tuvastus.tuvastus("vesi1.jpg"));
     }
 
 }
