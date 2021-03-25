@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Peaklass {
     public static void main(String[] args) throws Exception{
         /* NäidudMassiivi aug20 = new NäidudMassiivi(2.055, 3.515, 2020, 8);
@@ -14,8 +16,11 @@ public class Peaklass {
         System.out.println(dec20);
         System.out.println(mar21);*/
 
-        System.out.println(MassiiviStatistika.AastaKuluKülm(2020));
-        System.out.println(MassiiviStatistika.AastaKuluSoe(2020));
+        MassiiviStatistika TartuVeevärk = new MassiiviStatistika(4.650,2.0352);
+
+        System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluKülm(2020)));
+        System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(2020)));
+        System.out.println(TartuVeevärk.KuuArve(2020,3));
     }
 
 }

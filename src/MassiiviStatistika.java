@@ -1,8 +1,13 @@
-import java.util.Arrays;
-
 public class MassiiviStatistika {
+    public double soojahind; // vee soojendamise hind
+    public double kanalhind; // vee ja kanalisatsiooni hind
 
-    public static String AastaKuluSoe(int sisendaasta) throws Exception{
+    public MassiiviStatistika(double soojahind, double kanalhind) {
+        this.soojahind = soojahind;
+        this.kanalhind = kanalhind;
+    }
+
+    public static double[] AastaKuluSoe(int sisendaasta) throws Exception{
         double[] soojakulu = new double[12];
         double[] soojanäit = new double[13];
 
@@ -28,10 +33,10 @@ public class MassiiviStatistika {
         for (int i = 0; i < 12; i++) {
             soojakulu[i] = soojanäit[i+1]-soojanäit[i];
         }
-        return Arrays.toString(soojakulu);
+        return soojakulu;
     }
 
-    public static String AastaKuluKülm(int sisendaasta) throws Exception{
+    public static double[] AastaKuluKülm(int sisendaasta) throws Exception{
         double[] külmakulu = new double[12];
         double[] külmanäit = new double[13];
 
@@ -57,20 +62,22 @@ public class MassiiviStatistika {
         for (int i = 0; i < 12; i++) {
             külmakulu[i] = külmanäit[i+1]-külmanäit[i];
         }
-        return Arrays.toString(külmakulu);
+        return külmakulu;
     }
 
-    
+    public static double[] KuuKulud(int sisendaasta, int sisendkuu) throws Exception{
+        double[] kuludkoos = new double[2];
+        kuludkoos[0] = MassiiviStatistika.AastaKuluSoe(sisendaasta)[sisendkuu-1];
+        kuludkoos[1] = MassiiviStatistika.AastaKuluKülm(sisendaasta)[sisendkuu-1];
+        return kuludkoos;
+    }
 
+    public double KuuArve(int sisendaasta, int sisendkuu) throws Exception{
+        double[] kuludkoos = KuuKulud(sisendaasta, sisendkuu);
+        double soojaarve = kuludkoos[0]*soojahind;
+        double kanalarve = (kuludkoos[0]+kuludkoos[1])*kanalhind;
+        double arve = soojaarve + kanalarve;
+        return arve;
+    }
 
-
-    // Arvutused dashboardile
-    // Näitudest veekulu tehtud
-
-    // Veehind lisandub nt, peab saama muutuda
-    // Igakuine kulu
-    // Järjesta sooja vee tarbimise järgi
-    // Järjesta külma vee tarbimise järgi
-    // Järjesta kogutarbimise järgi
-    // Võrdle aastaid kuude lõikes
 }
