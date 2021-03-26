@@ -9,6 +9,8 @@ import java.util.Scanner;
 // Kuumassivid ilusamini kuvada statistikas (nice-to-have)
 // Kommentaare lisada (should have)
 // tekstid üle vaadata (nice-to-have)
+// Kas peaks saama lisada failidesse ka ilma meili kohe saatmiseta?
+// Kas peaks salvestama ka kuhugi massiividesse kõik massiivid kokku, ilma faili vajamata?
 
 public class Peaklass {
     public static void main(String[] args) throws Exception{
