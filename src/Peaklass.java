@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -39,8 +40,13 @@ public class Peaklass {
         }
 
         if (valik==3){
-            // vaatab kuupäeva, võtab eelmise kuu, kui ei ole annab teada, kui on ütleb arve.
-            System.out.println(TartuVeevärk.KuuArve(2021,2));
+            int aasta = LocalDate.now().getYear();
+            int kuu = LocalDate.now().getMonthValue()-1;
+            double arve = TartuVeevärk.KuuArve(aasta,kuu);
+            if (arve <= 0){
+                System.out.println("Viimase kuu näidud ei ole sisestatud");
+            }
+            else {System.out.println("Aasta " + aasta + " " + kuu + ". kuu arve on " + arve + "€");}
 
         }
 
