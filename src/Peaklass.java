@@ -9,6 +9,7 @@ import java.util.Scanner;
 // Kuumassivid ilusamini kuvada statistikas (nice-to-have)
 // Kommentaare lisada (should have)
 // tekstid üle vaadata (nice-to-have)
+
 // Kas peaks saama lisada failidesse ka ilma meili kohe saatmiseta?
 // Kas peaks salvestama ka kuhugi massiividesse kõik massiivid kokku, ilma faili vajamata?
 
@@ -25,10 +26,11 @@ public class Peaklass {
         System.out.println("Hetkel tuleb programmile need pildid ise viidata (et saaks harjutada ka Scanneri kasutamist!)");
         System.out.println();
 
+        while (true) {
+            System.out.println("Kas tahad sisestada uued näidud (1), vaadata veekulude statistikat (2), vaadata viimase kuu veearvet (3), katkestada (4)?");
+            int valik = scan.nextInt();
+            scan.nextLine();  // parandab int-skännist tuleneva bugi, kus skipib järgmise sisendi sisestamise võimaluse.
 
-        System.out.println("Kas tahad sisestada uued näidud (1), vaadata veekulude statistikat (2), vaadata viimase kuu veearvet (3)?");
-        int valik = scan.nextInt();
-        scan.nextLine();  // parandab int-skännist tuleneva bugi, kus skipib järgmise sisendi sisestamise võimaluse.
 
         if (valik==1){
             System.out.println("Sisesta soojaveenäidu pildi nimi: (Testimiseks \"vesi2.jpg\")");
@@ -47,7 +49,6 @@ public class Peaklass {
             System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluKülm(aasta)));
             System.out.println("Aasta " + aasta + " soojaveekulu:");
             System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(aasta)));
-
         }
 
         if (valik==3){
@@ -58,8 +59,10 @@ public class Peaklass {
                 System.out.println("Viimase kuu näidud ei ole sisestatud");
             }
             else {System.out.println("Aasta " + aasta + " " + kuu + ". kuu arve on " + arve + "€");}
-
         }
+
+        if (valik==4){break;}
+    }
 
     }
 
