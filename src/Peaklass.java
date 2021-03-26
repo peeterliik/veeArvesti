@@ -1,30 +1,49 @@
-import net.sourceforge.tess4j.Tesseract;
-
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Peaklass {
     public static void main(String[] args) throws Exception{
-        /* NäidudMassiivi aug20 = new NäidudMassiivi(2.055, 3.515, 2020, 8);
-        NäidudMassiivi sep20 = new NäidudMassiivi(4.550, 6.810, 2020, 9);
-        NäidudMassiivi oct20 = new NäidudMassiivi(7.434, 10.605, 2020, 10);
-        NäidudMassiivi nov20 = new NäidudMassiivi(10.565, 14.466, 2020, 11);
-        NäidudMassiivi dec20 = new NäidudMassiivi(12.286, 16.454, 2020, 12);
-        NäidudMassiivi jan21 = new NäidudMassiivi(15.483, 19.873, 2021, 1);
-        NäidudMassiivi feb21 = new NäidudMassiivi(17.375, 22.297, 2021, 2);
-        NäidudMassiivi mar21 = new NäidudMassiivi(20.046,24.848);
 
-        System.out.println(aug20);
-        System.out.println(dec20);
-        System.out.println(mar21);*/
-
+        System.out.println("Teretulemst meie veearvesti programmi kasutama.");
+        System.out.println("Veearvesti aitab veenäidud logida, saata ühistu meilile ning kuvada statistikana.");
+        System.out.println("Programm on arendusfaasis ning rühmatöö nõuetele vastamiseks tehtud modifikatsioonidega.");
+        System.out.println("Tulevikus on programm ühendatud statiivil kaameratega, mis teevad kord kuus pildi kahest veenäidikust");
+        System.out.println("Hetkel tuleb programmile need pildid ise viidata (et saaks harjutada ka Scanneri kasutamist!)");
+        System.out.println();
 
         MassiiviStatistika TartuVeevärk = new MassiiviStatistika(4.650,2.0352);
 
-        System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluKülm(2020)));
-        System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(2020)));
-        System.out.println(TartuVeevärk.KuuArve(2020,3));
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Kas tahad sisestada uued näidud (1), vaadata veekulude statistikat (2), vaadata viimase kuu veearvet (3)?");
+        int valik = scan.nextInt();
 
-        System.out.println(Tuvastus.tuvastus("vesi1.jpg"));
+        if (valik==1){
+        System.out.println("Sisesta soojaveenäidu pildi nimi: (Testimiseks \"vesi2.jpg\")");
+        String soojapilt = scan.nextLine();
+        System.out.println("Sisesta külmaveenäidu pildi nimi: (Testimiseks \"vesi1.jpg\")");
+        String külmapilt = scan.nextLine();
+        System.out.println("Mis meiliaadtessile näidud saadame?");
+        String meiliaadress = scan.nextLine();
+            NäidudMassiivi uus = new NäidudMassiivi(Tuvastus.tuvastus(soojapilt),Tuvastus.tuvastus(külmapilt),meiliaadress);
+        }
+
+        if (valik==2){
+            System.out.println("Mis aasta veekulu statistikat soovid näha?");
+            int aasta = scan.nextInt();
+            System.out.println("Aasta " + aasta + " külmaveekulu:");
+            System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluKülm(aasta)));
+            System.out.println("Aasta " + aasta + " soojaveekulu:");
+            System.out.println(Arrays.toString(MassiiviStatistika.AastaKuluSoe(aasta)));
+
+        }
+
+        if (valik==3){
+            // vaatab kuupäeva, võtab eelmise kuu, kui ei ole annab teada, kui on ütleb arve.
+            System.out.println(TartuVeevärk.KuuArve(2021,2));
+
+        }
+
+
     }
 
 }

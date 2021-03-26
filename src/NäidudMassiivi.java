@@ -1,7 +1,8 @@
-import java.time.LocalDate;
-import java.util.*;
 import javax.mail.*;
-import javax.mail.internet.*;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
+import java.time.LocalDate;
+import java.util.Properties;
 
 
 public class NäidudMassiivi {
@@ -13,14 +14,14 @@ public class NäidudMassiivi {
 
 
     // Salvestab automaatselt saadetud näidud massiivi ja tekstifaili, lisades juurde saatmisaja kuu ja aasta
-    public NäidudMassiivi(double soojanäit, double külmanäit) throws Exception {
+    public NäidudMassiivi(double soojanäit, double külmanäit, String saajasisend) throws Exception {
         this.aasta = LocalDate.now().getYear();
         this.kuu = LocalDate.now().getMonthValue()-1; //lahutan ühe, sest saadetakse eelmise kuu näidud
         this.soojanäit = soojanäit;
         this.külmanäit = külmanäit;
         this.massiiv = new double[]{aasta, kuu, soojanäit, külmanäit};
         this.NäidudFaili(massiiv);
-        this.NäidudMeili();
+        this.NäidudMeili(saajasisend);
     }
 
     // Salvestab manuaalselt sisestatud ja juba kuu ja aastaga varustatud näidud massiivi ja tekstifaili
@@ -31,7 +32,7 @@ public class NäidudMassiivi {
         this.külmanäit = külmanäit;
         this.massiiv = new double[]{aasta, kuu, soojanäit, külmanäit};
         this.NäidudFaili(massiiv);
-        this.NäidudMeili();
+        this.NäidudMeili("");
     }
 
     // Meetod, mis kirjutab näidu tekstifaili
@@ -42,7 +43,7 @@ public class NäidudMassiivi {
         }
     }
 
-    public void NäidudMeili(){
+    public void NäidudMeili(String saajasisend){
         // Kasutasin Gmaili Serveri kaudu Javaga emaili saatmise õpetust lehelt:
         // https://www.javatpoint.com/example-of-sending-email-using-java-mail-api-through-gmail-server
 
@@ -51,7 +52,8 @@ public class NäidudMassiivi {
         // Kuna selline parooli avaldamine on VÄGA VÄGA halb ja ebaturvaline, peab kasutaja tegema eraldi konto selleks.
         // Lisame saatnusek parooli küsimise rühmatöö teises etapis
         String parool = "JavaJava123";
-        String saaja = "javaryhmatoo+saaja@gmail.com";
+        String saaja = saajasisend;
+        if (saajasisend.equals("")) {saaja ="javaryhmatoo+saaja@gmail.com";}
         String pealkiri = "Krt 12 veenäidud";
         String sisu = this.toString();
 
@@ -79,7 +81,7 @@ public class NäidudMassiivi {
             kiri.setText(sisu);
             //saadan kirja
             Transport.send(kiri);
-            System.out.println("Kiri edukalt saadetud");
+            System.out.println("Kiri edukalt saadetud aadressile " + saaja);
         } catch (MessagingException e) {throw new RuntimeException(e);}
     }
 
