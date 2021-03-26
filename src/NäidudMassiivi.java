@@ -6,12 +6,11 @@ import java.util.Properties;
 
 
 public class NäidudMassiivi {
-    public int aasta;
-    public int kuu;
-    public double soojanäit;
-    public double külmanäit;
-    public double[] massiiv;
-
+    private int aasta;
+    private int kuu;
+    private double soojanäit;
+    private double külmanäit;
+    private double[] massiiv;
 
     // Salvestab automaatselt saadetud näidud massiivi ja tekstifaili, lisades juurde saatmisaja kuu ja aasta
     public NäidudMassiivi(double soojanäit, double külmanäit, String saajasisend) throws Exception {

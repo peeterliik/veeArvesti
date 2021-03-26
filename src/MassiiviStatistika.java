@@ -1,6 +1,6 @@
 public class MassiiviStatistika {
-    public double soojahind; // vee soojendamise hind
-    public double kanalhind; // vee ja kanalisatsiooni hind
+    private double soojahind; // vee soojendamise hind
+    private double kanalhind; // vee ja kanalisatsiooni hind
 
     public MassiiviStatistika(double soojahind, double kanalhind) {
         this.soojahind = soojahind;

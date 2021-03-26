@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11e4e5ed-037f-4031-978d-2140a38c611b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/näidud.txt" beforeDir="false" afterPath="$PROJECT_DIR$/näidud.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tuvastus.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuvastus.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Peaklass.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Peaklass.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/Tuvastus.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/Tuvastus.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vesi1.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/vesi1.jpg" afterDir="false" />
-    </list>
+    <list default="true" id="11e4e5ed-037f-4031-978d-2140a38c611b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,6 +50,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Peaklass" />
@@ -76,7 +80,7 @@
       <workItem from="1616693706628" duration="1593000" />
       <workItem from="1616757785654" duration="3882000" />
       <workItem from="1616766598716" duration="259000" />
-      <workItem from="1616771396882" duration="1449000" />
+      <workItem from="1616771396882" duration="3102000" />
     </task>
     <servers />
   </component>
