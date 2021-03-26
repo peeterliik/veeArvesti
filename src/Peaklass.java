@@ -18,6 +18,7 @@ public class Peaklass {
 
         System.out.println("Kas tahad sisestada uued näidud (1), vaadata veekulude statistikat (2), vaadata viimase kuu veearvet (3)?");
         int valik = scan.nextInt();
+        scan.nextLine();  // parandab int-skännist tuleneva bugi, kus skipib järgmise sisendi sisestamise võimaluse.
 
         if (valik==1){
             System.out.println("Sisesta soojaveenäidu pildi nimi: (Testimiseks \"vesi2.jpg\")");

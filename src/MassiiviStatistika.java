@@ -31,7 +31,7 @@ public class MassiiviStatistika {
             }
         }
         for (int i = 0; i < 12; i++) {
-            soojakulu[i] = soojanäit[i+1]-soojanäit[i];
+            soojakulu[i] = Math.round((soojanäit[i+1]-soojanäit[i])*1000.0)/1000.0;
         }
         return soojakulu;
     }
@@ -60,7 +60,7 @@ public class MassiiviStatistika {
             }
         }
         for (int i = 0; i < 12; i++) {
-            külmakulu[i] = külmanäit[i+1]-külmanäit[i];
+            külmakulu[i] = Math.round((külmanäit[i+1]-külmanäit[i])*1000.0)/1000.0;
         }
         return külmakulu;
     }
@@ -76,7 +76,7 @@ public class MassiiviStatistika {
         double[] kuludkoos = KuuKulud(sisendaasta, sisendkuu);
         double soojaarve = kuludkoos[0]*soojahind;
         double kanalarve = (kuludkoos[0]+kuludkoos[1])*kanalhind;
-        double arve = soojaarve + kanalarve;
+        double arve = Math.round((soojaarve + kanalarve)*100.0)/100.0;
         return arve;
     }
 
