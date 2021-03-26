@@ -36,17 +36,6 @@
     <property name="project.structure.side.proportion" value="0.3586207" />
   </component>
   <component name="RunManager" selected="Application.Peaklass">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Peaklass" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Peaklass" />
       <module name="ProjektVeearvesti" />
@@ -81,6 +70,7 @@
       <workItem from="1616757785654" duration="3882000" />
       <workItem from="1616766598716" duration="259000" />
       <workItem from="1616771396882" duration="6324000" />
+      <workItem from="1616795672406" duration="186000" />
     </task>
     <servers />
   </component>

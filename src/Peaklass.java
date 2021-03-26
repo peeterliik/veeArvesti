@@ -2,14 +2,6 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Scanner;
 
-// TO DO:
-// + Publicud private'ks ja getterid-setterid peale. (must have)
-// + Panna sisendid while loopide sisse (nice-to-have)
-// Panna sisenditele catch'id ja try'd sisse (should have)
-// Kuumassivid ilusamini kuvada statistikas (nice-to-have)
-// Kommentaare lisada (should have)
-// tekstid üle vaadata (nice-to-have)
-
 
 public class Peaklass {
     public static void main(String[] args) throws Exception{
