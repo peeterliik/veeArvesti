@@ -16,3 +16,8 @@ Peaklass (testimiseks)
 Sümbolituvastus (Tesseract)
 NäidudMassiivi
 MassiiviStatistika
+
+Projekti puhul töötab Tuvastuse klass hetkel ainult väga selgete kontrasete piltidega. Näidete hulgas on üks selline (vesi1.jpg), teised pildid annavad hetkel veateate.
+
+Projekt suudab lugeda näidud massiivi, need statistilisel kujul esitada ning lisaks saata näidud ka soovitud e-mailile.
+

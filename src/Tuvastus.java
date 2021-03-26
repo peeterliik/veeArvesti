@@ -17,10 +17,6 @@ public class Tuvastus {
             return -1.0;
         }
 
-        /* Janeli testimiseks
-        double vesitest = 51.913;
-        if(failinimi.equals("vesi1.jpg")){vesitest=64.341;}
-        return vesitest;*/
     }
 
 
