@@ -2,6 +2,13 @@ import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.Scanner;
 
+// TO DO:
+// Publicud private'ks ja getterid-setterid peale.
+// Panna sisendid while loopide sisse
+// Panna sisenditele catch'id ja try'd sisse
+// Kommentaare lisada
+// tekstid üle vaadata
+
 public class Peaklass {
     public static void main(String[] args) throws Exception{
 
