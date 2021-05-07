@@ -64,6 +64,7 @@ public class NäidudMassiivi {
         props.put("mail.smtp.auth", "true");
         props.put("mail.smtp.port", "465");
 
+
         //Teen sessiooni
         Session sessioon = Session.getDefaultInstance(props,
                 new javax.mail.Authenticator() {
@@ -71,6 +72,7 @@ public class NäidudMassiivi {
                         return new PasswordAuthentication(saatja,parool);
                     }
                 });
+
 
         //Koostan kirja
         try {

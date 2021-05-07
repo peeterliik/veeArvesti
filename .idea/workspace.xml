@@ -4,42 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="11e4e5ed-037f-4031-978d-2140a38c611b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/executionHistory/executionHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/executionHistory/executionHistory.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/fileChanges/last-build.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/fileContent/fileContent.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/fileHashes/fileHashes.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/fileHashes/fileHashes.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/javaCompile/javaCompile.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/5.1.1/javaCompile/taskHistory.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.gradle/vcs-1/gc.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/build.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/build/classes/java/main/oop/MustRuut.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mustruut-gradle2/mustruut-gradle/src/main/java/oop/MustRuut.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/näidud.txt" beforeDir="false" afterPath="$PROJECT_DIR$/näidud.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/CardLayoutDemo.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PeaklassGraafiline.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PeaklassGraafiline.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PeaklassGraafiline$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PeaklassGraafiline$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PeaklassGraafiline$2$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PeaklassGraafiline$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PeaklassGraafiline$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/PeaklassGraafiline.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/PeaklassGraafiline.class" afterDir="false" />
-    </list>
+    <list default="true" id="11e4e5ed-037f-4031-978d-2140a38c611b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,15 +58,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MustRuut" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="oop.MustRuut" />
+    <configuration name="PanelExample" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="PanelExample" />
       <module name="ProjektVeearvesti" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="oop.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,13 +79,24 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PeaklassGraafiline" />
+        <item itemvalue="Application.PanelExample" />
         <item itemvalue="Application.Peaklass" />
         <item itemvalue="Application.CardLayoutExample" />
         <item itemvalue="Application.CardLayoutDemo" />
-        <item itemvalue="Application.MustRuut" />
       </list>
     </recent_temporary>
   </component>
@@ -144,6 +114,8 @@
       <workItem from="1616766598716" duration="259000" />
       <workItem from="1616771396882" duration="6324000" />
       <workItem from="1616795672406" duration="186000" />
+      <workItem from="1620407892868" duration="37000" />
+      <workItem from="1620408114929" duration="14569000" />
     </task>
     <servers />
   </component>
@@ -161,5 +133,16 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$USER_HOME$/Desktop/UT MSC/OOP/Rühmatöö_1/src/Peaklass.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

@@ -1,4 +1,5 @@
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -13,30 +14,43 @@ public class PeaklassGraafiline {
 
         MassiiviStatistika TartuVeevärk = new MassiiviStatistika(4.650,2.0352);
 
-        final String card1text = "Veearvesti";
+        final String card1text = "Avaleht";
         final String card2text = "Näidud";
         final String card3text = "Veekulu";
         final String card4text = "Viimane kuu";
         final JPanel cards;
-        final String FIRST = "Veearvesti";
+        final String FIRST = "Avaleht";
         final String SECOND = "Näidud";
         final String THIRD = "Veekulu";
         final String FOURTH = "Viimane kuu";
 
         JFrame frame = new JFrame("Projekt Veearvesti");
 
-        // Kaart 1
-        JPanel card1 = new JPanel();
-        JLabel intro = new JLabel();
-        intro.setText("<html><body>Teretulemast proovima meie veearvesti projekti.<br> Tee valik all oleva navigatsiooniriba abil.<br>Programmi sulgemiseks vajuta nuppu katkesta.</body></html>");
 
-        card1.add(intro);
+        // Kaart 1
+        JPanel card1 = new JPanel(new BorderLayout(0, 2));
+        JPanel sisuc1 = new JPanel(new BorderLayout(0, 2));
+        JTextArea intro = new JTextArea();
+        intro.setOpaque(false);
+        intro.setLineWrap(true);
+        intro.setWrapStyleWord(true);
+        intro.setBorder(new EmptyBorder(0,8,20,8));
+        intro.setText("Teretulemast proovima meie veearvesti projekti. Tee valik vasakul oleva navigatsiooniriba abil. Programmi sulgemiseks vajuta nuppu katkesta.");
 
         JButton b4 = new JButton("Katkesta");
+        JButton b42 = new JButton("Katkesta");
 
-        card1.add(b4);
+        sisuc1.add(intro, BorderLayout.CENTER);
+        sisuc1.add(b4, BorderLayout.PAGE_END);
+        card1.add(sisuc1, BorderLayout.PAGE_START);
 
         b4.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
+            }
+        });
+        b42.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 frame.dispatchEvent(new WindowEvent(frame, WindowEvent.WINDOW_CLOSING));
@@ -47,19 +61,34 @@ public class PeaklassGraafiline {
 
         // Kaart 2
 
-        JPanel card2 = new JPanel();
-        JLabel tekst1 = new JLabel();
-        tekst1.setText("<html><body>Sisesta soojaveenäidu pildi nimi:<br> (Testimiseks \"vesi2.jpg\")</body></html>");
+        JPanel card2 = new JPanel(new BorderLayout(0, 12));
+        JPanel sisuc2 = new JPanel(new BorderLayout(0, 12));
+
+
+        JPanel rida1c2 = new JPanel(new BorderLayout(0, 2));
+        JTextArea tekst1 = new JTextArea();
+        tekst1.setText("Sisesta soojaveenäidu pildi nimi: (Testimiseks \"vesi2.jpg\")");
+        tekstIlusaks(tekst1);
         JTextField pilt1 = new JTextField(20);
+        rida1c2.add(tekst1, BorderLayout.PAGE_START);
+        rida1c2.add(pilt1, BorderLayout.PAGE_END);
 
 
-        JLabel tekst2 = new JLabel();
-        tekst2.setText("<html><body>Sisesta külmaveenäidu pildi nimi:<br> (Testimiseks \"vesi1.jpg\")</body></html>");
+        JPanel rida2c2 = new JPanel(new BorderLayout(0, 2));
+        JTextArea tekst2 = new JTextArea();
+        tekst2.setText("Sisesta külmaveenäidu pildi nimi: (Testimiseks \"vesi1.jpg\")");
+        tekstIlusaks(tekst2);
         JTextField pilt2 = new JTextField(20);
+        rida2c2.add(tekst2, BorderLayout.PAGE_START);
+        rida2c2.add(pilt2, BorderLayout.PAGE_END);
 
-        JLabel tekst3 = new JLabel();
-        tekst3.setText("<html><body>Sisesta e-mail,<br> kuhu näidud saadetakse:</body></html>");
+        JPanel rida3c2 = new JPanel(new BorderLayout(0, 2));
+        JTextArea tekst3 = new JTextArea();
+        tekst3.setText("Sisesta e-mail, kuhu näidud saadetakse:");
+        tekstIlusaks(tekst3);
         JTextField aadress = new JTextField(20);
+        rida3c2.add(tekst3, BorderLayout.PAGE_START);
+        rida3c2.add(aadress, BorderLayout.PAGE_END);
 
         JLabel näidud = new JLabel("Näidud saadetud!");
         näidud.setVisible(false);
@@ -70,9 +99,9 @@ public class PeaklassGraafiline {
             /*
             Testimiseks on valitud pildid, millest ühe (vesi2.jpg) puhul tuvastus ei toimi ja tulemuseks on vigane näit (-1),
             teise puhul on kasutatud pilti (vesi1.jpg), mille puhul tuvastus töötab
-            Näidud lisatakse faili näidud.txt ja saadetakse valitud e-mailile (meili peale saatmine ei pruugi igas arvutis alati
-            töötada, kuna Gmail ei taha suvalisi arvuteid usaldada üht ja sama saatja meilikontod kasutama ning võib nõuda
-            kaheastmelist autentimist, mille peale meili välja saatmine antud programmiga ei tööta.
+            Näidud lisatakse faili näidud.txt ja saadetakse valitud e-mailile (Pikka aega pärast rühmatöö submittimist ei pruugi meil enam töörada,
+            kuna Gmail ei taha suvalisi arvuteid usaldada üht ja sama saatja meilikontod kasutama ning võib iseseisvalt uuesti saatmiskontol sisselülitada
+            väheturvaliste programmide mitteusaldamise, mille peale meili välja saatmine antud programmiga ei tööta.
              */
 
             @Override
@@ -80,49 +109,63 @@ public class PeaklassGraafiline {
                 String soojapilt = pilt1.getText();
                 String külmapilt = pilt2.getText();
                 String meiliaadress = aadress.getText();
+
+
                 try {
                     NäidudMassiivi uus = new NäidudMassiivi(Tuvastus.tuvastus(soojapilt),Tuvastus.tuvastus(külmapilt),meiliaadress);
                 } catch (Exception err){
-                    err.getMessage();
+                    System.out.println("Viga sisendis või seadmes. Kahjuks kõigi seadmetega (nt Maci arvutitega) tuvstuse osa veel ei tööta. Testime näidissisendiga.");
+                    try {
+                        NäidudMassiivi uus = new NäidudMassiivi(229,230,meiliaadress);
+                    } catch (Exception err2) {
+                        System.out.println(err2.getMessage());
+                    }
                 }
                 näidud.setVisible(true);
             }
         });
 
 
-        card2.add(tekst1);
-        card2.add(pilt1);
-        card2.add(tekst2);
-        card2.add(pilt2);
-        card2.add(tekst3);
-        card2.add(aadress);
-        card2.add(saada);
-        card2.add(näidud);
+        sisuc2.add(rida1c2, BorderLayout.PAGE_START);
+        sisuc2.add(rida2c2, BorderLayout.CENTER);
+        sisuc2.add(rida3c2, BorderLayout.PAGE_END);
+        card2.add(sisuc2,BorderLayout.PAGE_START);
+        card2.add(näidud, BorderLayout.CENTER);
+        card2.add(saada, BorderLayout.PAGE_END);
 
         // Kaart 2 lõpp
 
         // Kaart 3
-         JPanel card3 = new JPanel();
-         JLabel tekst4 = new JLabel();
-         tekst4.setText("<html><body>Mis aasta veekulu<br>statistikat soovid näha?</body></html>");
+        JPanel card3 = new JPanel(new BorderLayout(0, 12));
+        JPanel sisuc3 = new JPanel(new BorderLayout(0, 12));
+        JPanel rida1c3 = new JPanel(new BorderLayout(0, 12));
+        JPanel rida3c3 = new JPanel(new BorderLayout(0, 12));
+
+        JTextArea tekst4 = new JTextArea();
+         tekst4.setText("Mis aasta veekulu statistikat soovid näha?");
+         tekstIlusaks(tekst4);
          String aastad[]={"2019","2020","2021"};
          JComboBox cb=new JComboBox(aastad);
          JButton naita = new JButton("Näita");
-         JLabel soe = new JLabel();
-         JLabel külm = new JLabel();
+         JTextArea soe = new JTextArea(); JTextArea külm = new JTextArea();
+         tekstIlusaks(soe); tekstIlusaks(külm);
+         soe.setBorder(new EmptyBorder(24,6,0,6));
 
-         card3.add(tekst4);
-         card3.add(cb);
-         card3.add(naita);
-         card3.add(soe);
-         card3.add(külm);
+         rida1c3.add(tekst4, BorderLayout.CENTER);
+         rida1c3.add(cb, BorderLayout.LINE_END);
+         sisuc3.add(rida1c3, BorderLayout.PAGE_START);
+         sisuc3.add(naita, BorderLayout.CENTER);
+         card3.add(sisuc3, BorderLayout.PAGE_START);
+         rida3c3.add(soe, BorderLayout.PAGE_START);
+         rida3c3.add(külm, BorderLayout.CENTER);
+         card3.add(rida3c3, BorderLayout.CENTER);
          naita.addActionListener(new ActionListener() {
              @Override
              public void actionPerformed(ActionEvent e) {
                  int aasta = Integer.parseInt(aastad[cb.getSelectedIndex()]);
                  try {
-                     soe.setText("Soojakulu " + Arrays.toString(MassiiviStatistika.AastaKuluSoe(aasta)));
-                     külm.setText("Külmakulu "+Arrays.toString(MassiiviStatistika.AastaKuluKülm(aasta)));
+                     soe.setText("Soojakulu aastal " + aasta +":\n" + Arrays.toString(MassiiviStatistika.AastaKuluSoe(aasta)));
+                     külm.setText("Külmakulu aastal " + aasta +":\n"+Arrays.toString(MassiiviStatistika.AastaKuluKülm(aasta)));
                  } catch (Exception err) {
                      err.getMessage();
                  }
@@ -160,7 +203,7 @@ public class PeaklassGraafiline {
                 CardLayout cl = (CardLayout) (cards.getLayout());
                 String cmd = e.getActionCommand();
                 if (cmd.equals(FIRST)) {
-                    cl.show(cards,"Veearvesti");
+                    cl.show(cards,"Avaleht");
                 } else if (cmd.equals(SECOND)) {
                     cl.show(cards, "Näidud");
                 } else if (cmd.equals(THIRD)) {
@@ -172,7 +215,7 @@ public class PeaklassGraafiline {
         }
        ControlActionListener cal=new ControlActionListener();
 
-        JButton btn1 = new JButton("Veearvesti");
+        JButton btn1 = new JButton("Avaleht");
         btn1.setActionCommand(FIRST);
         btn1.addActionListener(cal);
 
@@ -188,19 +231,41 @@ public class PeaklassGraafiline {
         btn4.setActionCommand(FOURTH);
         btn4.addActionListener(cal);
 
-        JPanel controlButtons = new JPanel();
-        controlButtons.add(btn1);
-        controlButtons.add(btn2);
-        controlButtons.add(btn3);
-        controlButtons.add(btn4);
+        JLabel nav = new JLabel();
+        nav.setText("<html><body style = \"\">Navigatsioon: </body></html>");
+        nav.setBorder(new EmptyBorder(10,8,10,0));
+
+        JPanel controlButtons = new JPanel(new BorderLayout(0, 2));
+        JPanel nupud = new JPanel(new BorderLayout(0, 2));
+        JPanel nupud1 = new JPanel(new BorderLayout(0, 2));
+        JPanel nupud2 = new JPanel(new BorderLayout(0, 2));
+        nupud1.add(btn1,BorderLayout.PAGE_START);
+        nupud1.add(btn2,BorderLayout.CENTER);
+        nupud2.add(btn3,BorderLayout.PAGE_START);
+        nupud2.add(btn4,BorderLayout.CENTER);
+        nupud.add(nupud1,BorderLayout.PAGE_START);
+        nupud.add(nupud2,BorderLayout.CENTER);
+        controlButtons.add(nupud,BorderLayout.PAGE_START);
+        controlButtons.add(b42, BorderLayout.PAGE_END);
+        controlButtons.setBorder(new EmptyBorder(0,0,10,0));
+
 
         Container pane=frame.getContentPane();
-        pane.add(controlButtons,BorderLayout.PAGE_END);
+        pane.add(nav,BorderLayout.PAGE_START);
+        pane.add(controlButtons,BorderLayout.LINE_START);
         pane.add(cards, BorderLayout.CENTER);
 
 
+
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setSize(600,300);
+        frame.setSize(600,400);
         frame.setVisible(true);
         }
+
+    public static void tekstIlusaks(JTextArea tekst){
+        tekst.setOpaque(false);
+        tekst.setLineWrap(true);
+        tekst.setWrapStyleWord(true);
+        tekst.setBorder(new EmptyBorder(0,6,0,6));
+    }
         }
